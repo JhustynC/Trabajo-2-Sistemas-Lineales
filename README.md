@@ -1,3 +1,5 @@
+"# Trabajo-2-Sistemas-Lineales"
+
 Este es un pryecto de sistemas lineales y señales
 
 # Crear un entorno virtual
@@ -11,7 +13,3 @@ Este es un pryecto de sistemas lineales y señales
 # Crear lista de requerimientos
 
     > pip freeze > requirements.txt
-
-
-
-"# Trabajo-2-Sistemas-Lineales" 

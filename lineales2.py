@@ -6,7 +6,7 @@ import pandas as pd
 muestras = 10
 
 # condiciones iniciales ascendente ...,y[-2],y[-1]
-y0  = [1,2]
+y0 = [1,2]
 
 # PROCEDIMIENTO
 m0 = len(y0)
@@ -17,11 +17,11 @@ n  = np.arange(-m0,muestras,1)
 xi = np.zeros(m, dtype=float)
 yi = np.zeros(m, dtype=float)
 
-# añade condiciones iniciales
+# Añade condiciones iniciales
 xi[0:m0] = 0
 yi[0:m0] = y0
 
-# calcula los siguientes valores
+# Calcula los siguientes valores
 for k in range(m0,m,1):
     xi[k] = n[k]
     yi[k] = yi[k-1]-0.24*yi[k-2]+xi[k]-2*xi[k-1]
@@ -39,7 +39,6 @@ pd.set_option('display.precision', 2)
 # Imprimimos el resultado
 print('muestras:', len(n))
 print(df.to_string(index=False))
-
 
 # Graficamos los resultados
 plt.figure(figsize=(10, 5))

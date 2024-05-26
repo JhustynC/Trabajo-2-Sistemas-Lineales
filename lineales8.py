@@ -20,8 +20,7 @@ x_t = x(t)
 h_t = h(t)
 
 # Calcular la convolución usando numpy
-y_t = np.convolve(h_t, x_t, mode='same') * dt   
-# El factor dt es para la corrección de la escala
+y_t = np.convolve(h_t, x_t, mode='same')   # El factor (t[1] - t[0]) es para la corrección de la escala
 
 # Graficar las funciones y la convolución
 plt.figure(figsize=(10, 3.5))

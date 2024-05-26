@@ -22,14 +22,14 @@ plt.figure(figsize=(12, 6))
 
 # Graficar x[n]
 plt.subplot(1, 2, 1)
-plt.stem(range(n_values), x[:n_values], use_line_collection=True)
+plt.stem(range(n_values), x[:n_values])
 plt.title('Entrada x[n]')
 plt.xlabel('n')
 plt.ylabel('x[n]')
 
 # Graficar y[n]
 plt.subplot(1, 2, 2)
-plt.stem(range(n_values), y[:n_values], use_line_collection=True)
+plt.stem(range(n_values), y[:n_values])
 plt.title('Salida y[n]')
 plt.xlabel('n')
 plt.ylabel('y[n]')

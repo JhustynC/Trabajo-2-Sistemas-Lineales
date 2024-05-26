@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Se define el escalón unitario.
 u_n = lambda n: np.where(n >= 0, 1, 0)
 
 # Definir las funciones x(t) y h(t)
@@ -11,14 +12,16 @@ def h(t):
     return u_n(t-3)
 
 # Crear un rango de valores de t
-t = np.linspace(-5, 100, 10000)
+t = np.linspace(-5, 10, 10000)
+dt = t[1] - t[0]
 
 # Evaluar las funciones x(t) y h(t)
 x_t = x(t)
 h_t = h(t)
 
 # Calcular la convolución usando numpy
-y_t = np.convolve(h_t, x_t, mode='same')   # El factor (t[1] - t[0]) es para la corrección de la escala
+y_t = np.convolve(h_t, x_t, mode='same') * dt   
+# El factor dt es para la corrección de la escala
 
 # Graficar las funciones y la convolución
 plt.figure(figsize=(10, 3.5))

@@ -18,12 +18,11 @@ f_n = lambda n: np.exp(-n/5) * np.cos((n * np.pi) / 5) * u(n)
 f_n_values = f_n(-2*n+1)
 
 markerline, stemlines, baseline = plt.stem(n, f_n_values)
-plt.setp(stemlines, 'linewidth', 2)  # Ajustar el grosor de los palitos
+plt.setp(stemlines, 'linewidth', 2)  # Ajustar el grosor de las rectas
 plt.setp(markerline, 'markersize', 6)  # Ajustar el tamaño de los marcadores
 
 
 # Graficar f[n] usando stem
-#plt.stem(n, f_n_values)
 plt.title('$f[n] = e^{-n/5} \cdot \cos(\pi n/5) \cdot u[n]$')
 plt.xlabel('n')
 plt.ylabel('$f[n]$')

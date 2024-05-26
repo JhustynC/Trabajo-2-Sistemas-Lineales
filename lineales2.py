@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# INGRESO
-muestras = 10
+# número máximo de muestras
+muestras = 10 
 
 # condiciones iniciales ascendente ...,y[-2],y[-1]
 y0  = [1,2]
 
-# PROCEDIMIENTO
+# número de muestras
 m0 = len(y0)
 m  = muestras + m0
 
@@ -44,7 +44,6 @@ print(df.to_string(index=False))
 # Graficamos los resultados
 plt.figure(figsize=(10, 5))
 
-
 # Gráfica
 plt.subplot(1,2,1)
 plt.stem(n,xi)
@@ -55,13 +54,11 @@ plt.title('Entrada x[n]=n*u[n]')
 plt.xlabel('n')
 plt.ylabel('x[n]')
 
-
 plt.subplot(1,2,2)
 plt.stem(n,yi)
 plt.xlabel('n')
 plt.ylabel('y[n]')
 plt.grid()
 plt.title('Respuesta y[n]=y[n-1]-0.24*y[n-2]+x[n]-2*x[n-1]')
-
 
 plt.show()

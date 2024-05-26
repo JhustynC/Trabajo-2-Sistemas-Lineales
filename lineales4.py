@@ -2,7 +2,7 @@ import numpy as np
 from scipy.signal import lfilter, convolve
 import matplotlib.pyplot as plt
 
-def suma_de_concolucion(x, h):
+def suma_de_convolucion(x, h):
     N = len(x)
     M = len(h)
     y = np.zeros(N + M - 1)
@@ -16,7 +16,7 @@ x = np.array([0, 1, 2, 3, 2, 1, 0], dtype=float)
 h = np.array([1, 1, 1, 1, 1, 1], dtype=float)
 
 # Convolución implementada
-y_custom = suma_de_concolucion(x, h)
+y_custom = suma_de_convolucion(x, h)
 print("Resultado de la convolución implementada:", y_custom)
 
 # Convolución con scipy.signal.convolve
@@ -47,14 +47,11 @@ plt.ylabel('Amplitud')
 plt.grid()
 
 # Resultado de la convolución
-plt.subplot(3, 1, 3)
-#plt.stem(np.arange(len(y_custom)), y_custom, label='Implementación personalizada', linefmt='C0-', markerfmt='C0o', basefmt='C0-')
-#plt.stem(np.arange(len(y_convolve)), y_convolve, label='scipy.signal.convolve', linefmt='C1--', markerfmt='C1s', basefmt='C1--')
+plt.subplot(3, 1, 3) 
 plt.stem(np.arange(len(y_filter)), y_filter, label='scipy.signal.lfilter', linefmt='C2-.', markerfmt='C2^', basefmt='C2-.')
 plt.title('Resultado de la convolución')
 plt.xlabel('Muestras')
 plt.ylabel('Amplitud')
-#plt.legend()
 plt.grid()
 
 plt.tight_layout()
